@@ -1,0 +1,1 @@
+export const splitTextToP = (text: string[], className?: string) => text.map((val, ind) => <p className={className} key={ind}>{val}</p>)

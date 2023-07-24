@@ -1,0 +1,21 @@
+$color_main_text: #171717;
+
+@mixin text_base {
+  color: $color_main_text;
+  font-family: inherit;
+}
+
+@mixin text_normal {
+  @include text_base;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.5;
+  
+}
+
+@mixin text_large {
+  @include text_base;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 1.5;
+}

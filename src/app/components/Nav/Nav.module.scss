@@ -1,0 +1,19 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $gap_normal;
+}
+
+.btn {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  @include text_large;
+
+  &:hover {
+    font-weight: 400;
+  }
+}
