@@ -1,35 +1,14 @@
 .title {
   cursor: pointer;
-  margin: 0;
-  padding: 0;
-  background: none;
-  border: none;
   text-transform: uppercase;
   @include text_large;
 
-  &::after {
-      transition: .2s;
-      position: absolute;
-      content: '>';
-      opacity: 0;
-      visibility: hidden;
-      transform: translate(15px, -15px) rotate(90deg);
-    }
-
   &:hover {
     transition-delay: 0s;
-    font-weight: 600;
+     @include text_large_bold;
   }
 
   &.active {
-    font-weight: 600;
-
-    &::after {
-      transition: .2s;
-      transition-delay: .8s;
-      opacity: 1;
-      visibility: visible;
-      transform: translate(15px, 2px) rotate(90deg);
-    }
+     @include text_large_bold;
   }
 }

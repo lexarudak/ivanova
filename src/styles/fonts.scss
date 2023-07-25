@@ -16,6 +16,11 @@ $color_main_text: #171717;
 @mixin text_large {
   @include text_base;
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
   line-height: 1.5;
+}
+
+@mixin text_large_bold {
+  @include text_large;
+  font-weight: 500;
 }

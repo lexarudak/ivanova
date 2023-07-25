@@ -1,10 +1,16 @@
-import { Education } from "@/app/components/Education/Education";
-import { PageNames } from "./const";
+import { InfoPage } from "@/app/components/InfoPage/InfoPage";
+import {
+  EDUCATION_DATA,
+  EXPERIENCE_DATA,
+  PageNames,
+  SKILLS_DATA,
+} from "./const";
+import { AboutPage } from "@/app/components/AboutPage/AboutPage";
 
 export const pages = new Map([
-  [PageNames.education, <Education key={1} />],
-  [PageNames.skills, <div key={2}>THIS IS SKILLS</div>],
-  [PageNames.experience, <div key={3}>THIS IS experience</div>],
-  [PageNames.about, <div key={4}>THIS IS about</div>],
+  [PageNames.education, <InfoPage key={1} data={EDUCATION_DATA} />],
+  [PageNames.skills, <InfoPage key={2} data={SKILLS_DATA} />],
+  [PageNames.experience, <InfoPage key={3} data={EXPERIENCE_DATA} />],
+  [PageNames.about, <AboutPage key={4} />],
   [PageNames.portfolio, <div key={5}>THIS IS portfolio</div>],
 ]);

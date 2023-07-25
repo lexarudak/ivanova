@@ -34,9 +34,11 @@
   transition: .2s;
   opacity: 0;
   visibility: hidden;
+  height: 60%;
 
   &.active {
-    transition-delay: .8s;
+    transition: .4s;
+    transition-delay: .4s;
     opacity: 1;
     visibility: visible;
   }
