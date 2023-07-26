@@ -9,7 +9,7 @@ export const TAGLINE =
   "From Schematic Design to Construction Administration project management";
 
 export const LANG_LIST = [
-  ["English", "B2"],
+  ["English", "IELTS 6.5"],
   ["Belorussian", "native"],
   ["Russian", "native"],
 ];

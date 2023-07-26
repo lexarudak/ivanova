@@ -22,5 +22,20 @@ $color_main_text: #171717;
 
 @mixin text_large_bold {
   @include text_large;
-  font-weight: 500;
+  font-weight: 400;
+}
+
+@mixin text_large_extra_bold {
+  @include text_large;
+  font-weight: 600;
+}
+
+@mixin text_large_link {
+  cursor: pointer;
+  @include text_large;
+  text-decoration: none;
+
+  &:hover {
+   text-decoration: underline;
+  }
 }

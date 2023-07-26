@@ -23,13 +23,6 @@
 }
 
 .link {
-  cursor: pointer;
   text-align: center;
-  @include text_large;
-  transition: .2s;
-  text-decoration: none;
-
-  &:hover {
-   text-decoration: underline;
-  }
+  @include text_large_link;
 }

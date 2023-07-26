@@ -1,3 +1,4 @@
+import { EMAIL, LINKED_IN, PHONE } from "@/models/const";
 import { LANG_LIST, LIST_INFO, TAGLINE } from "./AboutPage.const";
 import styles from "./AboutPage.module.scss";
 
@@ -22,9 +23,31 @@ const fillLang = (data: string[][]): JSX.Element => (
   </ul>
 );
 
+const fillLinks = (links: JSX.Element[]): JSX.Element => (
+  <ul className={styles.linkList}>
+    {links.map((link, index) => (
+      <li className={styles.linkListItem} key={index}>
+        {link}
+      </li>
+    ))}
+  </ul>
+);
+
+const LINK_LIST = [
+  <a href={`tel:${PHONE}`} className={styles.link} key={PHONE}>
+    {PHONE}
+  </a>,
+  <a href={`mailto:${EMAIL}`} className={styles.link} key={EMAIL}>
+    {EMAIL}
+  </a>,
+  <a href={LINKED_IN} className={styles.link} key={LINKED_IN} target="_blanc">
+    {LINKED_IN}
+  </a>,
+];
+
 export const AboutPage = (): JSX.Element => {
   return (
-    <>
+    <div className={styles.page}>
       <div className={styles.block}>
         {fillList(LIST_INFO)}
         <p className={styles.text}>{TAGLINE}</p>
@@ -35,8 +58,8 @@ export const AboutPage = (): JSX.Element => {
       </div>
       <div className={styles.block}>
         <h3 className={styles.subtitle}>CONTACTS</h3>
-        {fillLang(LANG_LIST)}
+        {fillLinks(LINK_LIST)}
       </div>
-    </>
+    </div>
   );
 };

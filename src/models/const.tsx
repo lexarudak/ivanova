@@ -2,6 +2,12 @@ import { InfoData } from "./intaerface";
 
 export const POPUP_CONTAINER = "popup_container";
 
+export const PHONE = "+77051495916";
+
+export const EMAIL = "ivanadarya@gmail.com";
+
+export const LINKED_IN = "https://www.linkedin.com/in/darya-ivanova-alex/";
+
 export enum PageNames {
   empty = "",
   education = "education",

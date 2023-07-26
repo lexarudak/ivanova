@@ -15,6 +15,11 @@ body {
   margin: 0 auto;
 }
 
-p, h2 {
+p, h2, h3, ul {
   margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
 }

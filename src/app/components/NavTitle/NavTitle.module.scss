@@ -5,10 +5,10 @@
 
   &:hover {
     transition-delay: 0s;
-     @include text_large_bold;
+     @include text_large_extra_bold;
   }
 
   &.active {
-     @include text_large_bold;
+     @include text_large_extra_bold;
   }
 }
