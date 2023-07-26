@@ -4,9 +4,13 @@ import { INFO_TEXT } from "./MainInfo.const";
 import { splitTextToP } from "@/models/helpers";
 import classNames from "classnames";
 
-export const MainInfo = (): JSX.Element => {
+export const MainInfo = ({
+  isPopupOpen,
+}: {
+  isPopupOpen: boolean;
+}): JSX.Element => {
   return (
-    <div className={classNames(styles.container)}>
+    <div className={classNames(styles.container, isPopupOpen && styles.hide)}>
       <Image
         src={"/ivanova.jpg"}
         alt={"Darya Ivanova photo"}

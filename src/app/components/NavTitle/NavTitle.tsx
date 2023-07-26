@@ -7,10 +7,12 @@ import { PageNames } from "@/models/const";
 export const NavTitle = ({
   name,
   isOpen,
+  currentPage,
   onClickFn,
 }: {
   name: PageNames;
   isOpen?: boolean;
+  currentPage?: PageNames;
   onClickFn: (name: PageNames, titleRef: HTMLDivElement) => void;
 }): JSX.Element => {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -30,7 +32,8 @@ export const NavTitle = ({
     <h2
       className={classNames(
         styles.title,
-        isOpen && isTitleLoaded && styles.active
+        isOpen && isTitleLoaded && styles.active,
+        currentPage === name && styles.hide
       )}
       onClick={onClickHandler}
       ref={titleRef}

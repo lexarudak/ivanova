@@ -24,7 +24,7 @@ export const Popup = ({
   const closePopup = (): void => {
     setIsPopupStartClose(true);
     setTimeout(() => setIsPopupLoaded(false), 800);
-    setTimeout(() => closePopupFn(), 1000);
+    closePopupFn();
   };
 
   useEffect(() => {

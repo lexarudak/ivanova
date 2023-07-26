@@ -2,6 +2,8 @@
   cursor: pointer;
   text-transform: uppercase;
   @include text_large;
+  opacity: 1;
+  transition: 0s;
 
   &:hover {
     transition-delay: 0s;
@@ -10,5 +12,10 @@
 
   &.active {
      @include text_large_extra_bold;
+  }
+
+  &.hide {
+    transition-delay: 0.03s;
+    opacity: 0;
   }
 }

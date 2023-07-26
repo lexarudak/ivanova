@@ -7,12 +7,10 @@
   left: 0;
   opacity: 0;
   visibility: hidden;
-  background-color: white;
-  transition: .2s;
+  // transition: .4s;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: auto;
 
   &.active {
     opacity: 1;
@@ -32,14 +30,17 @@
 }
 
 .dataWrapper {
-  transition: .2s;
+  transition: .8s;
   opacity: 0;
   visibility: hidden;
-  height: 60%;
+  height: 70%;
+  transform: translateY(100%);
+  overflow: auto;
 
   &.active {
-    transition: .4s;
-    transition-delay: .4s;
+    transition: .8s;
+    // transition-delay: .4s;
+    transform: translateY(0%);
     opacity: 1;
     visibility: visible;
   }
