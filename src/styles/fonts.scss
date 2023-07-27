@@ -10,7 +10,11 @@ $color_main_text: #171717;
   font-size: 14px;
   font-weight: 200;
   line-height: 1.5;
-  
+}
+
+@mixin text_normal_bold {
+  @include text_normal;
+  font-weight: 400;
 }
 
 @mixin text_large {
