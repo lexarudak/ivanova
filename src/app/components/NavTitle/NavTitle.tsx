@@ -1,8 +1,8 @@
 "use client";
+import { PageNames } from "@/models/const";
+import classNames from "classnames";
 import { useEffect, useRef, useState } from "react";
 import styles from "./NavTitle.module.scss";
-import classNames from "classnames";
-import { PageNames } from "@/models/const";
 
 export const NavTitle = ({
   name,

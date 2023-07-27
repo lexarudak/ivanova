@@ -20,10 +20,7 @@ export default function RootLayout({
 }): JSX.Element {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        {children}
-        <div id={POPUP_CONTAINER} />
-      </body>
+      <body className={montserrat.className}>{children}</body>
     </html>
   );
 }
