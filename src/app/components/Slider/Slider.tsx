@@ -8,14 +8,12 @@ import {
   correctDots,
   firstTouchHandler,
   hopePage,
-  initSize,
   lastTouchHandler,
   makePages,
   onWheelHandler,
   resizeHandle,
-  sizeDown,
-  sizeUp,
 } from "./Slider.helper";
+import { LARGE_SIZE, SIZE_LINE, SMALL_SIZE } from "./Slider.const";
 
 export const Slider = ({
   setCurrentProject,
@@ -25,6 +23,8 @@ export const Slider = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [activeBlock, setActiveBlock] = useState("");
   const [isScroll, setIsScroll] = useState(false);
+  const initSize =
+    window && window.innerWidth >= SIZE_LINE ? LARGE_SIZE : SMALL_SIZE;
   const [size, setSize] = useState(initSize);
   const lastPage = Math.ceil(projectList.length / size);
   const initTouch = useRef(0);
@@ -34,6 +34,14 @@ export const Slider = ({
     setCurrentPage,
     lastPage
   );
+  const sizeDown = (size: number, setSize: (size: number) => void): void => {
+    if (window.innerWidth < SIZE_LINE && size === LARGE_SIZE)
+      setSize(SMALL_SIZE);
+  };
+  const sizeUp = (size: number, setSize: (size: number) => void): void => {
+    if (window.innerWidth >= SIZE_LINE && size === SMALL_SIZE)
+      setSize(LARGE_SIZE);
+  };
 
   window.onresize = resizeHandle.bind(null, [
     sizeDown.bind(null, size, setSize),

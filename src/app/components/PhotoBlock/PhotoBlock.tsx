@@ -1,8 +1,6 @@
 import classNames from "classnames";
 import styles from "./PhotoBlock.module.scss";
 
-const BASE_IMG = "/public/basic_house_img.svg";
-
 export const PhotoBlock = ({
   title,
   year,

@@ -1,11 +1,7 @@
 import { PhotoBlock } from "../PhotoBlock/PhotoBlock";
-import { LARGE_SIZE, SIZE_LINE, SMALL_SIZE } from "./Slider.const";
 import styles from "./Slider.module.scss";
 import { SliderProps } from "./Slider.interface";
 import { MutableRefObject, TouchList } from "react";
-
-export const initSize =
-  window.innerWidth >= SIZE_LINE ? LARGE_SIZE : SMALL_SIZE;
 
 export const isItemCorrect = (
   index: number,
@@ -53,17 +49,6 @@ export const hopePage = (
 ): void => {
   if (!prev && currentPage < lastPage) setCurrentPage(currentPage + 1);
   if (prev && currentPage > 1) setCurrentPage(currentPage - 1);
-};
-
-export const sizeDown = (
-  size: number,
-  setSize: (size: number) => void
-): void => {
-  if (window.innerWidth < SIZE_LINE && size === LARGE_SIZE) setSize(SMALL_SIZE);
-};
-export const sizeUp = (size: number, setSize: (size: number) => void): void => {
-  if (window.innerWidth >= SIZE_LINE && size === SMALL_SIZE)
-    setSize(LARGE_SIZE);
 };
 
 export const correctDots = (
