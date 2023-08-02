@@ -1,4 +1,22 @@
 $color_main_text: #171717;
+$stroke_color: #3d3d3d;
+$stroke_main: 
+		-0   -1px 0px   $stroke_color,
+		 0   -1px 0px   $stroke_color,
+		-0    1px 0px   $stroke_color,
+		 0    1px 0px   $stroke_color,
+		-1px -0   0px   $stroke_color,
+		 1px -0   0px   $stroke_color,
+		-1px  0   0px   $stroke_color,
+		 1px  0   0px   $stroke_color,
+		-1px -1px 0px   $stroke_color,
+		 1px -1px 0px   $stroke_color,
+		-1px  1px 0px   $stroke_color,
+		 1px  1px 0px   $stroke_color,
+		-1px -1px 0px   $stroke_color,
+		 1px -1px 0px   $stroke_color,
+		-1px  1px 0px   $stroke_color,
+		 1px  1px 0px   $stroke_color;
 
 @mixin text_base {
   color: $color_main_text;

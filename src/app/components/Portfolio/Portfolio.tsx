@@ -11,16 +11,14 @@ export const Portfolio = ({
   const [currentPage, setCurrentPage] = useState(1);
   const [currentProject, setCurrentProject] = useState("");
   return (
-    <div className={styles.container}>
-      <Slider
-        {...{
-          currentPage,
-          currentProject,
-          setCurrentPage,
-          setCurrentProject,
-          projectList,
-        }}
-      />
-    </div>
+    <Slider
+      {...{
+        currentPage,
+        currentProject,
+        setCurrentPage,
+        setCurrentProject,
+        projectList,
+      }}
+    />
   );
 };

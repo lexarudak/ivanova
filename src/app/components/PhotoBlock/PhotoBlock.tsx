@@ -22,10 +22,18 @@ export const PhotoBlock = ({
     <div
       onMouseEnter={() => overHandler(title)}
       onMouseLeave={() => overHandler("")}
-      className={classNames(styles.item, activeBlock !== title && styles.hide)}
-      style={{
-        backgroundImage: `url(${bg || BASE_IMG})`,
-      }}
+      className={classNames(
+        styles.item,
+        activeBlock !== title && styles.hide,
+        bg && styles.photo
+      )}
+      style={
+        bg
+          ? {
+              backgroundImage: `url(${bg})`,
+            }
+          : undefined
+      }
       onClick={() => onClickHandler(title)}
     >
       {year && (

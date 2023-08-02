@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot {
+  cursor: pointer;
+  width: 8px;
+  height: 8px;
+  background-color: gray;
+  transition: .2s;
+
+  &.active {
+    background-color: $color_main_text;
+  }
+
+  &:hover {
+    transform: scale(1.5);
+  }
+}
