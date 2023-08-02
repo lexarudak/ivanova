@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  margin: 0 20px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+  opacity: 0;
+  visibility: 0;
+  height: 0px;
+  transition: .4s;
+  cursor: pointer;
+
+
+  &.active {
+    opacity: 1;
+    visibility: 1;
+    height: 50px;
+    margin-bottom: 30px;
+  }
+}
+
+.title {
+  @include text_large;
+}
+
+.year {
+  @include text_large_extra_bold;
+}
