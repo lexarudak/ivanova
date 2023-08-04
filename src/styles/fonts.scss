@@ -49,7 +49,7 @@ $stroke_main:
 
 @mixin text_large_extra_bold {
   @include text_large;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 @mixin text_large_link {

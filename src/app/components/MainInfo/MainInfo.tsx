@@ -1,8 +1,9 @@
-import Image from "next/image";
 import styles from "./MainInfo.module.scss";
-import { IMG_ALT, IMG_PATH, INFO_TEXT } from "./MainInfo.const";
+import { IMG_ALT, INFO_TEXT } from "./MainInfo.const";
 import { splitTextToP } from "@/models/helpers";
 import classNames from "classnames";
+import IMG from "../../../../public/ivanova.jpg";
+import Image from "next/image";
 
 export const MainInfo = ({
   isPopupOpen,
@@ -12,11 +13,11 @@ export const MainInfo = ({
   return (
     <div className={classNames(styles.container, isPopupOpen && styles.hide)}>
       <Image
-        src={IMG_PATH}
+        src={IMG}
         alt={IMG_ALT}
-        width={350}
-        height={233}
         className={styles.img}
+        priority
+        placeholder="blur"
       />
       {splitTextToP(INFO_TEXT, styles.text)}
     </div>

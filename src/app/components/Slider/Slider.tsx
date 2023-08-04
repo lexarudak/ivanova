@@ -1,86 +1,56 @@
 "use client";
 import classNames from "classnames";
-import { useRef, useState } from "react";
-import { Dots } from "../Dots/Dots";
-import styles from "./Slider.module.scss";
+import { useState } from "react";
+import { ProjectTitle } from "../ProjectTitle/ProjectTitle";
+import { fillSlider } from "./Slider.helper";
 import { SliderProps } from "./Slider.interface";
-import {
-  correctDots,
-  firstTouchHandler,
-  hopePage,
-  lastTouchHandler,
-  makePages,
-  onWheelHandler,
-  resizeHandle,
-} from "./Slider.helper";
-import { LARGE_SIZE, SIZE_LINE, SMALL_SIZE } from "./Slider.const";
+import styles from "./Slider.module.scss";
 
 export const Slider = ({
   setCurrentProject,
   projectList,
   currentProject,
+  setScrollTo,
 }: SliderProps): JSX.Element => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [activeBlock, setActiveBlock] = useState("");
-  const [isScroll, setIsScroll] = useState(false);
-  const initSize =
-    window && window.innerWidth >= SIZE_LINE ? LARGE_SIZE : SMALL_SIZE;
-  const [size, setSize] = useState(initSize);
-  const lastPage = Math.ceil(projectList.length / size);
-  const initTouch = useRef(0);
-  const goToNextPage = hopePage.bind(
-    null,
-    currentPage,
-    setCurrentPage,
-    lastPage
-  );
-  const sizeDown = (size: number, setSize: (size: number) => void): void => {
-    if (window.innerWidth < SIZE_LINE && size === LARGE_SIZE)
-      setSize(SMALL_SIZE);
+  const [hoverName, setHoverName] = useState("");
+  const [projectMode, setProjectMode] = useState(false);
+  const openProject = (name: string): void => {
+    setCurrentProject(name);
+    setProjectMode(true);
   };
-  const sizeUp = (size: number, setSize: (size: number) => void): void => {
-    if (window.innerWidth >= SIZE_LINE && size === SMALL_SIZE)
-      setSize(LARGE_SIZE);
+  const closeProject = (name: string): void => {
+    setCurrentProject(name);
+    setProjectMode(false);
   };
-
-  window.onresize = resizeHandle.bind(null, [
-    sizeDown.bind(null, size, setSize),
-    sizeUp.bind(null, size, setSize),
-    correctDots.bind(null, currentPage, lastPage, setCurrentPage),
-  ]);
+  const setActivePage = (name: string): void => {
+    setActiveBlock(name);
+    name && setHoverName(name);
+  };
 
   return (
-    <div className={styles.container}>
+    <>
+      <ProjectTitle
+        currentProject={hoverName}
+        hideStile={styles.hideName}
+        activeStile={
+          currentProject || activeBlock ? styles.activeName : undefined
+        }
+        setCurrentProject={closeProject}
+      />
       <div
-        className={styles.slider}
-        onTouchStart={(e) => {
-          firstTouchHandler(e.changedTouches, initTouch);
-        }}
-        onTouchEnd={(e) =>
-          lastTouchHandler(e.changedTouches, initTouch, goToNextPage)
-        }
-        onWheel={(e) =>
-          onWheelHandler(isScroll, setIsScroll, e.deltaY, goToNextPage)
-        }
+        className={classNames(styles.container, currentProject && styles.hide)}
       >
-        {makePages(
-          { setCurrentProject, projectList, currentProject },
-          currentPage,
-          lastPage,
-          size,
-          activeBlock,
-          setActiveBlock
-        )}
+        <div className={classNames(styles.slider, projectMode && styles.hide)}>
+          {fillSlider(
+            projectList,
+            currentProject,
+            openProject,
+            setActivePage,
+            setScrollTo
+          )}
+        </div>
       </div>
-      <div className={classNames(styles.dots)}>
-        <Dots
-          {...{
-            currentPage,
-            setCurrentPage,
-            lastPage,
-          }}
-        />
-      </div>
-    </div>
+    </>
   );
 };

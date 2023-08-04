@@ -5,7 +5,17 @@ export const PROJECTS: Project[] = [
     title: "Batagai",
     subtitle: "High-rise residential complex",
     year: "2021",
-    photos: ["/Batagai/1.jpg"],
+    photos: [
+      "/Batagai/1.jpg",
+      "/Batagai/2.jpg",
+      "/Batagai/3.jpg",
+      "/Batagai/4.jpg",
+      "/Batagai/5.jpg",
+      "/Batagai/6.jpg",
+      "/Batagai/7.jpg",
+      "/Batagai/8.jpg",
+      "/Batagai/9.jpg",
+    ],
     text: [
       " This modern district development in the city center offers a new level of urban living. Comprised of residential complexes, each consisting of 4-5 multistory buildings of varying heights, the area was designed to provide a modern and upscale aesthetic while ensuring cost-effectiveness. This was achieved by raising the level of detail closer to the viewer, reducing construction costs and enhancing the overall visual appeal of the development",
       "As part of the architect team, I found the experience of conceptualizing and executing this residential development to be a valuable learning opportunity. From designing each building to delivering the project to the client, I was able to demonstrate my ability to work as part of a team and showcase my skills in designing modern residential developments.",
@@ -27,7 +37,7 @@ export const PROJECTS: Project[] = [
     title: "OK Hill",
     subtitle: "Modular private house",
     year: "2020",
-    photos: ["/OK/1.jpg"],
+    photos: ["/OK/1.webp", "/OK/2.webp"],
     text: [
       "In this project, I joined mid-progress and was tasked with transferring the model from ArchiCAD to Revit. My responsibilities soon expanded to include Interior Design, Construction Documentation, and Construction Administration. I successfully completed all tasks and my performance was satisfactory, resulting in my being hired by the company.",
       "The project was developed as part of the LEVEL80 | architects",
@@ -37,7 +47,13 @@ export const PROJECTS: Project[] = [
     title: "Aidyn",
     subtitle: "Private house",
     year: "2020",
-    photos: ["/Aidyn/1.jpg"],
+    photos: [
+      "/Aidyn/1.jpg",
+      "/Aidyn/2.jpg",
+      "/Aidyn/3.jpg",
+      "/Aidyn/4.jpg",
+      "/Aidyn/5.jpg",
+    ],
     text: [
       "I got to work on a cool project where I designed the floor plans and exterior of a big private house in Central Asia. It was a new experience for me since it was my first time designing the outside of a house that size.The client was from a different country with different customs and culture, so it was a bit of a challenge to make sure we included those traditional elements while still keeping it modern.For example, the client had specific ideas about where certain rooms should go, like bedrooms and staff quarters, based on local customs.Overall, it was a great learning experience. I got to improve my design skills and learn more about different cultures.",
       "The project was developed as part of the LEVEL80 | architects",
@@ -143,7 +159,7 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-export const projectMap = new Map();
+export const projectMap = new Map<string, Project>();
 PROJECTS.forEach((val) => {
   projectMap.set(val.title, val);
 });

@@ -1,45 +1,34 @@
 import classNames from "classnames";
 import styles from "./PhotoBlock.module.scss";
+import { MotionImage } from "../MImage/MImage";
 
 export const PhotoBlock = ({
-  title,
-  year,
   bg,
   onClickHandler,
-  overHandler,
-  activeBlock,
+  onMouseEnterHandler,
+  onMouseLeaveHandler,
 }: {
-  title: string;
-  activeBlock: string;
-  year?: string;
   bg?: string;
-  onClickHandler: (title: string) => void;
-  overHandler: (title: string) => void;
+  onClickHandler: () => void;
+  onMouseEnterHandler?: () => void;
+  onMouseLeaveHandler?: () => void;
 }): JSX.Element => {
   return (
-    <div
-      onMouseEnter={() => overHandler(title)}
-      onMouseLeave={() => overHandler("")}
-      className={classNames(
-        styles.item,
-        activeBlock !== title && styles.hide,
-        bg && styles.photo
-      )}
-      style={
-        bg
-          ? {
-              backgroundImage: `url(${bg})`,
-            }
-          : undefined
-      }
-      onClick={() => onClickHandler(title)}
-    >
-      {year && (
-        <div className={styles.info}>
-          <p className={styles.title}>{title}</p>
-          <p className={styles.year}>{year}</p>
-        </div>
-      )}
-    </div>
+    <MotionImage
+      width={240}
+      height={180}
+      quality={70}
+      placeholder="blur"
+      transition={{ duration: 0.2 }}
+      initial={{ opacity: 0.7 }}
+      animate={{ opacity: 1 }}
+      alt={bg || ""}
+      blurDataURL={bg || "/basic_house_img.svg"}
+      src={bg || "/basic_house_img.svg"}
+      onMouseEnter={onMouseEnterHandler}
+      onMouseLeave={onMouseLeaveHandler}
+      className={classNames(styles.item, bg && styles.photo)}
+      onClick={onClickHandler}
+    />
   );
 };

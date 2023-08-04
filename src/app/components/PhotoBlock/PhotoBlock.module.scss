@@ -1,43 +1,21 @@
 .item {
   position: relative;
-  background-image: url('/basic_house_img.svg');
   background-position: center;
   background-size: 100px;
   background-repeat: no-repeat;
   background-color: rgb(255, 206, 160);
   cursor: pointer;
-  width: 240px;
-  height: 180px;
-  transition: .8s;
-  box-sizing: border-box;
+  transition: .5s;
+  filter: grayscale(100%);
 
   &.photo {
     background-size: cover;
   }
 
-  &:hover > .info {
-    opacity: 1;
-    visibility: visible;
+  &:hover {
+    transition: .2s;
+    filter: grayscale(0%);
   }
-
-  @include mediaMax('m') {
-    width: 150px;
-    height: 110px;
-  }
-}
-
-.info {
-  width: 240px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transition: .2s;
-  opacity: 0;
-  visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .title {
@@ -50,9 +28,4 @@
   @include text_large_extra_bold;
   color: white;
   text-shadow: $stroke_main;
-}
-
-.hide {
-  transition: .5s;
-  filter: grayscale(100%);
 }

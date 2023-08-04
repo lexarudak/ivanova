@@ -7,7 +7,6 @@
   left: 0;
   opacity: 0;
   visibility: hidden;
-  // transition: .4s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,18 +32,14 @@
   transition: .8s;
   opacity: 0;
   visibility: hidden;
-  height: 75%;
+  height: 80%;
   transform: translateY(100%);
   overflow: auto;
   width: 100%;
   max-width: 1000px;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
 
   &.active {
     transition: .8s;
-    // transition-delay: .4s;
     transform: translateY(0%);
     opacity: 1;
     visibility: visible;
