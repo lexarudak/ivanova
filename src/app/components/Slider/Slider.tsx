@@ -1,6 +1,6 @@
 "use client";
 import classNames from "classnames";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ProjectTitle } from "../ProjectTitle/ProjectTitle";
 import { fillSlider } from "./Slider.helper";
 import { SliderProps } from "./Slider.interface";
@@ -28,6 +28,8 @@ export const Slider = ({
     name && setHoverName(name);
   };
 
+  const container = useRef<HTMLDivElement>(null);
+
   return (
     <>
       <ProjectTitle
@@ -39,7 +41,14 @@ export const Slider = ({
         setCurrentProject={closeProject}
       />
       <div
+        ref={container}
         className={classNames(styles.container, currentProject && styles.hide)}
+        onWheel={(e) => {
+          if (!e.deltaX) {
+            const scrollStep = e.deltaY > 0 ? 20 : -20;
+            container.current?.scrollBy(scrollStep, 0);
+          }
+        }}
       >
         <div className={classNames(styles.slider, projectMode && styles.hide)}>
           {fillSlider(

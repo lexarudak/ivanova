@@ -5,17 +5,7 @@ export const PROJECTS: Project[] = [
     title: "Batagai",
     subtitle: "High-rise residential complex",
     year: "2021",
-    photos: [
-      "/Batagai/1.jpg",
-      "/Batagai/2.jpg",
-      "/Batagai/3.jpg",
-      "/Batagai/4.jpg",
-      "/Batagai/5.jpg",
-      "/Batagai/6.jpg",
-      "/Batagai/7.jpg",
-      "/Batagai/8.jpg",
-      "/Batagai/9.jpg",
-    ],
+    photos: ["/Batagai-2/1.jpg"],
     text: [
       " This modern district development in the city center offers a new level of urban living. Comprised of residential complexes, each consisting of 4-5 multistory buildings of varying heights, the area was designed to provide a modern and upscale aesthetic while ensuring cost-effectiveness. This was achieved by raising the level of detail closer to the viewer, reducing construction costs and enhancing the overall visual appeal of the development",
       "As part of the architect team, I found the experience of conceptualizing and executing this residential development to be a valuable learning opportunity. From designing each building to delivering the project to the client, I was able to demonstrate my ability to work as part of a team and showcase my skills in designing modern residential developments.",

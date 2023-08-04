@@ -1,12 +1,14 @@
 .container {
+  flex-shrink: 0;
   margin: 35px 0 40px;
   width: 800px;
   align-items: center;
   height: 460px;
-  transition: .5s;
+  transition: 0.5s;
   overflow-y: hidden;
   overflow-x: auto;
   scrollbar-width: thin;
+  user-select: none;
   &::-webkit-scrollbar {
     height: 3px;
   }

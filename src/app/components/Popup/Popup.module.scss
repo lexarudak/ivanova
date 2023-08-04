@@ -32,11 +32,17 @@
   transition: .8s;
   opacity: 0;
   visibility: hidden;
-  height: 80%;
+  height: 80vh;
   transform: translateY(100%);
   overflow: auto;
   width: 100%;
   max-width: 1000px;
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(98, 98, 98);
+  }
 
   &.active {
     transition: .8s;
