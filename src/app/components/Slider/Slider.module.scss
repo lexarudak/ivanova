@@ -1,0 +1,63 @@
+.container {
+  flex-shrink: 0;
+  margin: 35px 0 40px;
+  width: 800px;
+  align-items: center;
+  height: 460px;
+  transition: 0.5s;
+  overflow-y: hidden;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  user-select: none;
+  &::-webkit-scrollbar {
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(98, 98, 98);
+  }
+
+  
+  &.active {
+    height: 200px;
+  }
+
+  @include mediaMax('m') {
+    gap: 30px;
+  }
+
+  &.hide {
+    height: 220px;
+  }
+}
+
+.slider {
+  position: relative;
+  display: grid;
+  grid-template-rows: 180px 180px;
+  grid-template-columns: 240px;
+  grid-auto-columns: 240px;
+  grid-auto-flow: column;
+  gap: 40px;
+  transition: .5s;
+  opacity: 1;
+  visibility: visible;
+
+  @include mediaMax('m') {
+    min-height: 240px;
+  }
+
+  &.hide {
+    grid-template-rows: 1fr;
+  }
+}
+
+.hideName {
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s;
+}
+
+.activeName {
+  opacity: 1;
+  visibility: visible;
+}

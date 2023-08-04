@@ -1,0 +1,25 @@
+.container {
+  overflow: auto;
+  width: 800px;
+  padding: 0 20px;
+  height: 215px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(98, 98, 98);
+  }
+
+  & > p {
+    @include text_normal;
+    text-align: center;
+    margin-top: 10px
+  }
+}
+
+.subtitle {
+  @include text_large;
+  text-align: center;
+  margin-bottom: 30px;
+}

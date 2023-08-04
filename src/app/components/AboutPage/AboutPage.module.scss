@@ -1,0 +1,57 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px 20px;
+}
+
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.listItem,
+.text {
+  text-align: center;
+  @include text_large;
+}
+
+.listItem::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background-color: $color_main_text;
+  border-radius: 100%;
+  margin: 0 9px 3px 0;
+}
+
+.subtitle {
+  text-align: center;
+  @include text_large_extra_bold;
+}
+
+.link {
+  text-align: center;
+  @include text_large_link;
+}
+
+.langListItem {
+  text-align: center;
+}
+
+.langName {
+  @include text_large_bold;
+  margin-right: 10px
+}
+
+.langLevel {
+  @include text_large;
+}
+
+.linkList {
+  text-align: center;
+}

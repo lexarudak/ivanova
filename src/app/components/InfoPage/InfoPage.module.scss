@@ -1,0 +1,28 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.regular {
+  text-align: center;
+  @include text_large;
+}
+
+.bold {
+  text-align: center;
+  @include text_large_bold;
+}
+
+.link {
+  text-align: center;
+  @include text_large_link;
+}

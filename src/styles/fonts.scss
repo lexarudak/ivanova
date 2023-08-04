@@ -1,0 +1,63 @@
+$color_main_text: #171717;
+$stroke_color: #3d3d3d;
+$stroke_main: 
+		-0   -1px 0px   $stroke_color,
+		 0   -1px 0px   $stroke_color,
+		-0    1px 0px   $stroke_color,
+		 0    1px 0px   $stroke_color,
+		-1px -0   0px   $stroke_color,
+		 1px -0   0px   $stroke_color,
+		-1px  0   0px   $stroke_color,
+		 1px  0   0px   $stroke_color,
+		-1px -1px 0px   $stroke_color,
+		 1px -1px 0px   $stroke_color,
+		-1px  1px 0px   $stroke_color,
+		 1px  1px 0px   $stroke_color,
+		-1px -1px 0px   $stroke_color,
+		 1px -1px 0px   $stroke_color,
+		-1px  1px 0px   $stroke_color,
+		 1px  1px 0px   $stroke_color;
+
+@mixin text_base {
+  color: $color_main_text;
+  font-family: inherit;
+}
+
+@mixin text_normal {
+  @include text_base;
+  font-size: 14px;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+@mixin text_normal_bold {
+  @include text_normal;
+  font-weight: 400;
+}
+
+@mixin text_large {
+  @include text_base;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+@mixin text_large_bold {
+  @include text_large;
+  font-weight: 400;
+}
+
+@mixin text_large_extra_bold {
+  @include text_large;
+  font-weight: 500;
+}
+
+@mixin text_large_link {
+  cursor: pointer;
+  @include text_large;
+  text-decoration: none;
+
+  &:hover {
+   text-decoration: underline;
+  }
+}

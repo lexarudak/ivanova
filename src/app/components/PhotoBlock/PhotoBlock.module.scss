@@ -1,0 +1,31 @@
+.item {
+  position: relative;
+  background-position: center;
+  background-size: 100px;
+  background-repeat: no-repeat;
+  background-color: rgb(255, 206, 160);
+  cursor: pointer;
+  transition: .5s;
+  filter: grayscale(100%);
+
+  &.photo {
+    background-size: cover;
+  }
+
+  &:hover {
+    transition: .2s;
+    filter: grayscale(0%);
+  }
+}
+
+.title {
+  @include text_large;
+  color: white;
+  text-shadow: $stroke_main;
+}
+
+.year {
+  @include text_large_extra_bold;
+  color: white;
+  text-shadow: $stroke_main;
+}
