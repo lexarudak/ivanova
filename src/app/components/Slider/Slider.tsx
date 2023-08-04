@@ -45,7 +45,7 @@ export const Slider = ({
         className={classNames(styles.container, currentProject && styles.hide)}
         onWheel={(e) => {
           if (!e.deltaX) {
-            const scrollStep = e.deltaY > 0 ? 20 : -20;
+            const scrollStep = e.deltaY > 0 ? 40 : -40;
             container.current?.scrollBy(scrollStep, 0);
           }
         }}

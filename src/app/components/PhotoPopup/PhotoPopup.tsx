@@ -20,6 +20,8 @@ const fillPopup = (title: string): JSX.Element => {
               quality={70}
               width={1000}
               height={600}
+              placeholder="blur"
+              blurDataURL={photo}
               alt={photo}
               src={photo}
               priority
@@ -54,14 +56,13 @@ export const PhotoPopup = ({
       onClick={(e) => {
         if (e.target === e.currentTarget) closeFn();
       }}
-      onScroll={() => console.log("s")}
     >
       <div
         ref={container}
         className={styles.frame}
         onWheel={(e) => {
           if (!e.deltaX) {
-            const scrollStep = e.deltaY > 0 ? 20 : -20;
+            const scrollStep = e.deltaY > 0 ? 80 : -80;
             if (container.current) container.current.scrollLeft += scrollStep;
           }
         }}
